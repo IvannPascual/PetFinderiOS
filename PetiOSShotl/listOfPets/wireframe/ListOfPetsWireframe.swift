@@ -21,8 +21,6 @@ class ListOfPetsWireframe: PetListWireFrameProtocol {
 
         let wireFrame: PetListWireFrameProtocol = ListOfPetsWireframe()
 
-        
-        
         petListView.presenter = presenter
         presenter.view = petListView
         presenter.wireFrame = wireFrame
@@ -34,8 +32,6 @@ class ListOfPetsWireframe: PetListWireFrameProtocol {
         return petListView
 
     }
-    
-    
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)

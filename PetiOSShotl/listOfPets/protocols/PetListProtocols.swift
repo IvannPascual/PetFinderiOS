@@ -43,7 +43,6 @@ protocol PetListInteractorOutputProtocol: class {
     func onErrorRetrievingPets(_ message: String)
     func onErrorRetrievingToken(_ message: String)
     func onErrorRetrievingOrganization(_ message: String)
-
 }
 
 // PRESENTER -> INTERACTOR
@@ -57,6 +56,7 @@ protocol PetListInteractorInputProtocol: class {
 
 // INTERACTOR -> DATAMANAGER
 protocol PetListDataManagerInputProtocol: class {
+
 }
 
 // INTERACTOR -> REMOTEDATAMANAGER
@@ -65,7 +65,6 @@ protocol PetListRemoteDataManagerInputProtocol: class {
     
     func retrievePetList()
     func retrieveOrganitzations()
-
 }
 
 // REMOTEDATAMANAGER -> INTERACTOR
@@ -75,8 +74,5 @@ protocol PetListRemoteDataManagerOutputProtocol: class {
     func onErrorToken(_ message: String)
     func onSuccessOrganizations(_ organizations: Organizations)
     func onErrorOrganizations(_ message: String)
-    
-    
-
 }
 

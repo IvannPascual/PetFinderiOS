@@ -25,7 +25,6 @@ import ObjectMapper
         distance <- map["distance"]
         address <- map["address"]
     }
-    
 }
 
 struct Address: Mappable {
@@ -45,8 +44,6 @@ struct Address: Mappable {
         city <- map["city"]
         postcode <- map["postcode"]
     }
-    
-  
 }
 
 

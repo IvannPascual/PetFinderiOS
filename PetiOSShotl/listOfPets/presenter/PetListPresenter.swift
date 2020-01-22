@@ -24,9 +24,6 @@ class PetListPresenter: PetListPresenterProtocol {
         view?.showLoading()
         interactor?.retrieveOrganizations()
     }
-    
-
-
 }
 
 extension PetListPresenter: PetListInteractorOutputProtocol {
@@ -55,5 +52,4 @@ extension PetListPresenter: PetListInteractorOutputProtocol {
         view?.hideLoading()
         view?.showError(message)
     }
-    
 }

@@ -34,13 +34,13 @@ protocol Endpoint {
 enum Endpoints {
     
     enum Pets: Endpoint {
-        case fetch
+        case pets
         case token
         case organitzations
         
         public var path: String {
             switch self {
-            case .fetch: return "/animals"
+            case .pets: return "/animals"
             case .token: return "/oauth2/token"
             case .organitzations: return "/organizations"
 
@@ -50,7 +50,7 @@ enum Endpoints {
         
         public var url: String {
             switch self {
-            case .fetch: return "\(API.baseUrl)\(path)"
+            case .pets: return "\(API.baseUrl)\(path)"
             case .token: return "\(API.baseUrl)\(path)"
             case .organitzations: return "\(API.baseUrl)\(path)"
 

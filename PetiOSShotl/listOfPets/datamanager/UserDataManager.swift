@@ -8,9 +8,11 @@
 
 import Foundation
 class UserDataManager {
+    
     static let shared = UserDataManager()
     var token = ""
     var listOfOrganitzations = OrganizationsVM()
+    
     private init() { }
     
     func saveToken(token: String ) {
@@ -37,10 +39,7 @@ class UserDataManager {
 
             organitzationViewModel.address = addresVM
             listOfOrganitzations.organitzations.append(organitzationViewModel)
-            
         }
-
-        
     }
     
     func retrieveOrgranitzations()-> OrganizationsVM {

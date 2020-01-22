@@ -142,8 +142,8 @@
 		2C3F011923D853FA00BCB625 /* MapOfOrganizations */ = {
 			isa = PBXGroup;
 			children = (
+				2C3F013E23D8FCA100BCB625 /* view */,
 				2C3F013123D8A9FD00BCB625 /* viewmodel */,
-				2C3F011A23D854F100BCB625 /* OrganizationsMapViewController.swift */,
 			);
 			path = MapOfOrganizations;
 			sourceTree = "<group>";
@@ -154,6 +154,38 @@
 				2C3F013223D8AA0E00BCB625 /* OrganitzationsViewModel.swift */,
 			);
 			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		2C3F013B23D8FC5B00BCB625 /* wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */,
+			);
+			path = wireframe;
+			sourceTree = "<group>";
+		};
+		2C3F013C23D8FC7E00BCB625 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2C3F013D23D8FC8800BCB625 /* datamanager */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F011723D84F1200BCB625 /* UserDataManager.swift */,
+			);
+			path = datamanager;
+			sourceTree = "<group>";
+		};
+		2C3F013E23D8FCA100BCB625 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F011A23D854F100BCB625 /* OrganizationsMapViewController.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		2C505B6823D758E500A4BCF6 = {
@@ -227,14 +259,14 @@
 		2C505BAB23D75E9F00A4BCF6 /* listOfPets */ = {
 			isa = PBXGroup;
 			children = (
+				2C3F013D23D8FC8800BCB625 /* datamanager */,
+				2C3F013C23D8FC7E00BCB625 /* presenter */,
+				2C3F013B23D8FC5B00BCB625 /* wireframe */,
 				2C505BB623D75FC300A4BCF6 /* datasource */,
 				2C505BB323D75F9300A4BCF6 /* interactor */,
 				2C505BB023D75EF500A4BCF6 /* model */,
 				2C505BAC23D75EB200A4BCF6 /* protocols */,
 				2C505BA623D75E1700A4BCF6 /* view */,
-				2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */,
-				2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */,
-				2C3F011723D84F1200BCB625 /* UserDataManager.swift */,
 			);
 			path = listOfPets;
 			sourceTree = "<group>";

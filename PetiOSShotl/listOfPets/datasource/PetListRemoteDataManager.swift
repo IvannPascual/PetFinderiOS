@@ -38,16 +38,16 @@ class PetListRemoteDataManager:PetListRemoteDataManagerInputProtocol, RemoteToke
         let authBearer = "\(bearer) \(token.access_token)"
         let authHeader = ["Authorization": authBearer]
 
-        Alamofire.request(Endpoints.Pets.fetch.url, method: .get
+        Alamofire.request(Endpoints.Pets.pets.url, method: .get
             , parameters: parameters, encoding: URLEncoding.default, headers: authHeader).responseObject { (response: DataResponse<PetModelResponse>) in
                 switch response.result {
                 case let .success(pets):
                    self.remoteRequestHandler?.onPetsRetrieved([pets])
                 case let .failure(error):
                     #if DEBUG
-                        self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.ErrorWhenCallEndpointPets)
+                     self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.ErrorWhenCallEndpointPets)
                     #else
-                        self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.DefaultError)
+                     self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.DefaultError)
                     #endif
                 }
         }

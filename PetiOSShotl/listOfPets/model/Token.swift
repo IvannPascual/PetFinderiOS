@@ -23,5 +23,4 @@ struct Token: Mappable {
         expires_in     <- map["expires_in"]
         access_token     <- map["access_token"]
     }
-    
 }
