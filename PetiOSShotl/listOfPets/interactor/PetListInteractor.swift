@@ -42,6 +42,7 @@ extension PetListInteractor: PetListRemoteDataManagerOutputProtocol {
     }
     
     func onErrorOrganizations(_ message: String) {
+        UserDataManager.shared.saveOrganitzationsViewModel(OrganizationsDomainModel())
         presenter?.onErrorRetrievingOrganization(message)
     }
     

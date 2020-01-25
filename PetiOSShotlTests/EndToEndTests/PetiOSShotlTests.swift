@@ -29,7 +29,10 @@ class PetiOSShotlTests: AcceptanceTestCase {
         tester().waitForAnimationsToFinish()
         assert(listOfPetsViewController.petListViewModel.pets.animals.count == NoPetsRetrievedByTheServer)
         assert(listOfPetsViewController.petListViewModel.messageError == " ")
-
+        // sleep not mandatory to see the results in the emulatos
+        do {
+            sleep(3)
+        }
     }
 
     //test ent to end scenario
@@ -37,6 +40,11 @@ class PetiOSShotlTests: AcceptanceTestCase {
         let listOfPetsViewController = givenARealScenarioWithAFakeEmptyDataSourceOfPets()
         tester().waitForAnimationsToFinish()
         assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == 0)
+        assert(listOfPetsViewController.petListViewModel.messageError == " ")
+        // sleep not mandatory to see the results in the emulatos
+        do {
+            sleep(3)
+        }
     }
     
     // test end to end scenario
@@ -47,25 +55,54 @@ class PetiOSShotlTests: AcceptanceTestCase {
            tester().waitForAnimationsToFinish()
            assert(listOfPetsViewController.petListViewModel.pets.animals.count == NoPetsRetrievedByTheServer)
            assert(listOfPetsViewController.petListViewModel.messageError == RemotePetDataSourceMockWithServerError.errorServer500)
+        // sleep not mandatory to see the results in the emulatos
+        do {
+            sleep(3)
+        }
 
        }
     
     // test end to end scenario
     func testGivenACorrectReponse200OfGetPetsCallToTheServerWithOneElementInJson() {
-         let onePetRecievedInServerCall = 1
-         let listOfPetsViewController = givenARealScenarioWithOneElementJsonInTheCallToTheServer()
+        let onePetRecievedInServerCall = 1
+        let listOfPetsViewController = givenARealScenarioWithOneElementJsonInTheCallToTheServer()
           
-         tester().waitForAnimationsToFinish()
-         assert(listOfPetsViewController.petListViewModel.pets.animals.count == onePetRecievedInServerCall)
-         assert(listOfPetsViewController.petListViewModel.messageError != RemotePetDataSourceMockWithServerError.errorServer500)
+       
+        tester().waitForAnimationsToFinish()
+        
+        assert(listOfPetsViewController.petListViewModel.pets.animals.count == onePetRecievedInServerCall)
+        assert(listOfPetsViewController.petListViewModel.messageError != RemotePetDataSourceMockWithServerError.errorServer500)
         assert(listOfPetsViewController.petListViewModel.messageError == " ")
-
+        // sleep not mandatory to see the results in the emulatos
+       
     }
     
+    func testThatWhenACorrectReponse200OfGetOrganitzationsWithOneElementJsonTheMapViewScreenIsOpened() {
+        let onePetRecievedInServerCall = 1
+         let listOfPetsViewController = givenARealScenarioWithOneElementJsonInTheCallToTheServer()
+        listOfPetsViewController.presenter?.retrieveOrganizations()
+        
+         tester().waitForAnimationsToFinish()
+      
+         
+         assert(listOfPetsViewController.petListViewModel.pets.animals.count == onePetRecievedInServerCall)
+         assert(listOfPetsViewController.petListViewModel.messageError != RemotePetDataSourceMockWithServerError.errorServer500)
+         assert(listOfPetsViewController.petListViewModel.messageError == " ")
+    }
+    
+    func testThatWhenACorrectReponse500OfGetOrganitzationsTheMapViewScreenIsNotOpened() {
+           let errorCallWithNoElements = 0
+           let listOfPetsViewController = givenARealScenarioWithAErrorServerResponseDataSource()
+           listOfPetsViewController.presenter?.retrieveOrganizations()
+           
+            tester().waitForAnimationsToFinish()
+         
+            assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == errorCallWithNoElements)
+            assert(listOfPetsViewController.petListViewModel.messageError == RemotePetDataSourceMockWithServerError.errorServer500)
+       }
     
     
-
-    func givenARealScenarioWithAFakeEmptyDataSourceOfPets()-> PetListView {
+    private func givenARealScenarioWithAFakeEmptyDataSourceOfPets()-> PetListView {
         //Given the real scenario wireframe
         let wireframe = ListOfPetsWireframe()
         let listOfPetsViewController = wireframe.creatPetListModule() as! PetListView
@@ -83,7 +120,7 @@ class PetiOSShotlTests: AcceptanceTestCase {
         return listOfPetsViewController
     }
 
-    func givenARealScenarioWithAErrorServerResponseDataSource()->PetListView {
+    private func givenARealScenarioWithAErrorServerResponseDataSource()->PetListView {
         
         //Given the real scenario wireframe
         let wireframe = ListOfPetsWireframe()
@@ -100,7 +137,7 @@ class PetiOSShotlTests: AcceptanceTestCase {
         return listOfPetsViewController
     }
     
-    func givenARealScenarioWithOneElementJsonInTheCallToTheServer()->PetListView {
+    private func givenARealScenarioWithOneElementJsonInTheCallToTheServer()->PetListView {
            
            //Given the real scenario wireframe
            let wireframe = ListOfPetsWireframe()
