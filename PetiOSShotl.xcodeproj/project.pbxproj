@@ -36,9 +36,7 @@
 		2C505BC423D7662F00A4BCF6 /* ListOfPetsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */; };
 		2C505BC623D767EA00A4BCF6 /* PetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */; };
 		2C505BC823D7700A00A4BCF6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC723D7700A00A4BCF6 /* Token.swift */; };
-		2CE1BA9F23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */; };
 		2CE1BAA123DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA023DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift */; };
-		2CE1BAA323DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */; };
 		2CE1BAA623DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */; };
 		2CE1BAAA23DB9114003C480A /* PetModelDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA923DB9114003C480A /* PetModelDomain.swift */; };
 		2CE1BAAC23DC2D8E003C480A /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */; };
@@ -104,9 +102,7 @@
 		2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPetsWireframe.swift; sourceTree = "<group>"; };
 		2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenter.swift; sourceTree = "<group>"; };
 		2C505BC723D7700A00A4BCF6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeWithEmptyRepositoryScenario.swift; sourceTree = "<group>"; };
 		2CE1BAA023DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePetDataSourceMockWithEmptyList.swift; sourceTree = "<group>"; };
-		2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRemoteDataSourceOutputMock.swift; sourceTree = "<group>"; };
 		2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSongsMapperDataToDomain.swift; sourceTree = "<group>"; };
 		2CE1BAA923DB9114003C480A /* PetModelDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModelDomain.swift; sourceTree = "<group>"; };
 		2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
@@ -180,6 +176,14 @@
 				2C505BBB23D7603000A4BCF6 /* PetHeader.swift */,
 			);
 			path = collectionview;
+			sourceTree = "<group>";
+		};
+		2C27A67C23DC948900ECF8E0 /* EndPointsApiTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C27A67A23DC91AE00ECF8E0 /* EndPointTesting.swift */,
+			);
+			path = EndPointsApiTests;
 			sourceTree = "<group>";
 		};
 		2C3F011923D853FA00BCB625 /* MapOfOrganizations */ = {
@@ -274,14 +278,10 @@
 		2C505B8A23D758E800A4BCF6 /* PetiOSShotlTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C27A67C23DC948900ECF8E0 /* EndPointsApiTests */,
 				2CE1BABA23DC5789003C480A /* DataSourceMocks */,
-				2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */,
 				2CE1BAB223DC4293003C480A /* EndToEndTests */,
-				2CE1BAAD23DC2E82003C480A /* extensions */,
 				2C505B8D23D758E800A4BCF6 /* Info.plist */,
-				2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */,
-				2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */,
-				2C27A67A23DC91AE00ECF8E0 /* EndPointTesting.swift */,
 			);
 			path = PetiOSShotlTests;
 			sourceTree = "<group>";
@@ -396,6 +396,8 @@
 		2CE1BAB223DC4293003C480A /* EndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAAD23DC2E82003C480A /* extensions */,
+				2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */,
 				2C505B8B23D758E800A4BCF6 /* PetiOSShotlTests.swift */,
 			);
 			path = EndToEndTests;
@@ -740,8 +742,6 @@
 			files = (
 				2CE1BAB123DC2F22003C480A /* KIFTestActor.swift in Sources */,
 				2CE1BABE23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift in Sources */,
-				2CE1BA9F23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift in Sources */,
-				2CE1BAA323DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift in Sources */,
 				2CE1BAAC23DC2D8E003C480A /* AcceptanceTestCase.swift in Sources */,
 				2C27A67B23DC91AE00ECF8E0 /* EndPointTesting.swift in Sources */,
 				2C505B8C23D758E800A4BCF6 /* PetiOSShotlTests.swift in Sources */,
