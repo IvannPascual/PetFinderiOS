@@ -48,11 +48,11 @@ class PetListRemoteDataManager:PetListRemoteDataManagerInputProtocol, RemoteToke
                         return
                     }
                     self.remoteRequestHandler?.onPetsRetrieved(petsDomainModel!)
-                case let .failure(error):
+                case .failure(_):
                     #if DEBUG
-                     self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.ErrorWhenCallEndpointPets)
+                        self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.ErrorWhenCallEndpointPets)
                     #else
-                     self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.DefaultError)
+                        self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.DefaultError)
                     #endif
                 }
         }

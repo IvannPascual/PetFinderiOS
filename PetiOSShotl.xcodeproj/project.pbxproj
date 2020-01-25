@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2506E0105BA9C78D1F077386 /* Pods_PetiOSShotl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A6343F27A3B5A840E3B773 /* Pods_PetiOSShotl.framework */; };
+		2C27A67B23DC91AE00ECF8E0 /* EndPointTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C27A67A23DC91AE00ECF8E0 /* EndPointTesting.swift */; };
 		2C3F011823D84F1200BCB625 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F011723D84F1200BCB625 /* UserDataManager.swift */; };
 		2C3F011B23D854F100BCB625 /* OrganizationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F011A23D854F100BCB625 /* OrganizationsMapViewController.swift */; };
 		2C3F012A23D87AFA00BCB625 /* MapOrganizationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3F012923D87AFA00BCB625 /* MapOrganizationsDelegate.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C27A67A23DC91AE00ECF8E0 /* EndPointTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointTesting.swift; sourceTree = "<group>"; };
 		2C3F011723D84F1200BCB625 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		2C3F011A23D854F100BCB625 /* OrganizationsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsMapViewController.swift; sourceTree = "<group>"; };
 		2C3F012923D87AFA00BCB625 /* MapOrganizationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOrganizationsDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,23 @@
 				E15E1E6465AE37B0EA56FBE6 /* Pods_PetiOSShotlTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C27A67123DC855100ECF8E0 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				2C505BA723D75E4800A4BCF6 /* PetListView.swift */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		2C27A67223DC855C00ECF8E0 /* collectionview */ = {
+			isa = PBXGroup;
+			children = (
+				2C505BA923D75E7100A4BCF6 /* PetCell.swift */,
+				2C505BBB23D7603000A4BCF6 /* PetHeader.swift */,
+			);
+			path = collectionview;
 			sourceTree = "<group>";
 		};
 		2C3F011923D853FA00BCB625 /* MapOfOrganizations */ = {
@@ -262,6 +281,7 @@
 				2C505B8D23D758E800A4BCF6 /* Info.plist */,
 				2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */,
 				2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */,
+				2C27A67A23DC91AE00ECF8E0 /* EndPointTesting.swift */,
 			);
 			path = PetiOSShotlTests;
 			sourceTree = "<group>";
@@ -278,13 +298,10 @@
 		2C505BA623D75E1700A4BCF6 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				2CE1BAB623DC52C7003C480A /* PetListViewModel.swift */,
-				2C3F012923D87AFA00BCB625 /* MapOrganizationsDelegate.swift */,
+				2C27A67223DC855C00ECF8E0 /* collectionview */,
+				2C27A67123DC855100ECF8E0 /* viewcontroller */,
 				2CE1BAB923DC52EE003C480A /* delegates */,
 				2CE1BAB823DC52E9003C480A /* viewmodel */,
-				2C505BA723D75E4800A4BCF6 /* PetListView.swift */,
-				2C505BA923D75E7100A4BCF6 /* PetCell.swift */,
-				2C505BBB23D7603000A4BCF6 /* PetHeader.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -292,7 +309,6 @@
 		2C505BAB23D75E9F00A4BCF6 /* listOfPets */ = {
 			isa = PBXGroup;
 			children = (
-				2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */,
 				2CE1BAA423DB908F003C480A /* mapper */,
 				2C3F013D23D8FC8800BCB625 /* datamanager */,
 				2C3F013C23D8FC7E00BCB625 /* presenter */,
@@ -345,6 +361,7 @@
 		2CE1BAA423DB908F003C480A /* mapper */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */,
 			);
 			path = mapper;
 			sourceTree = "<group>";
@@ -395,6 +412,7 @@
 		2CE1BAB823DC52E9003C480A /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAB623DC52C7003C480A /* PetListViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -402,6 +420,7 @@
 		2CE1BAB923DC52EE003C480A /* delegates */ = {
 			isa = PBXGroup;
 			children = (
+				2C3F012923D87AFA00BCB625 /* MapOrganizationsDelegate.swift */,
 			);
 			path = delegates;
 			sourceTree = "<group>";
@@ -724,6 +743,7 @@
 				2CE1BA9F23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift in Sources */,
 				2CE1BAA323DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift in Sources */,
 				2CE1BAAC23DC2D8E003C480A /* AcceptanceTestCase.swift in Sources */,
+				2C27A67B23DC91AE00ECF8E0 /* EndPointTesting.swift in Sources */,
 				2C505B8C23D758E800A4BCF6 /* PetiOSShotlTests.swift in Sources */,
 				2CE1BAAF23DC2EE1003C480A /* XCTestCase.swift in Sources */,
 				2CE1BABC23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift in Sources */,

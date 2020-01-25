@@ -11,8 +11,8 @@ import KIF
 
 class AcceptanceTestCase: KIFTestCase {
 
-    fileprivate var originalRootViewController: UIViewController?
-    fileprivate var rootViewController: UIViewController? {
+     var originalRootViewController: UIViewController?
+     var rootViewController: UIViewController? {
         get {
             return UIApplication.shared.keyWindow?.rootViewController
         }

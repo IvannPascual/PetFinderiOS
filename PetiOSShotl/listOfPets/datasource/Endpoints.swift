@@ -40,14 +40,12 @@ enum Endpoints {
         
         public var path: String {
             switch self {
-            case .pets: return "/animals"
-            case .token: return "/oauth2/token"
-            case .organitzations: return "/organizations"
-
+                case .pets: return "/animals"
+                case .token: return "/oauth2/token"
+                case .organitzations: return "/organizations"
             }
         }
     
-        
         public var url: String {
             switch self {
             case .pets: return "\(API.baseUrl)\(path)"

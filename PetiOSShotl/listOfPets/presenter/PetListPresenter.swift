@@ -10,7 +10,6 @@ import Foundation
 
 class PetListPresenter: PetListPresenterProtocol {
 
-    
     weak var view: PetListViewProtocol?
     var interactor: PetListInteractorInputProtocol?
     var wireFrame: PetListWireFrameProtocol?

@@ -7,12 +7,11 @@
 //
 
 import Foundation
+
 struct PetListViewModel {
     
     var pets = PetModelDomain()
     var urlImages: [String] = [String]()
-       
-    var messageError = " "
-       
+    var errorMessage = " "
     
 }

@@ -77,8 +77,6 @@ extension PetListView {
     
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-
 extension PetListView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -154,17 +152,16 @@ extension PetListView: PetListViewProtocol {
     
     func showPets(with pets: PetModelDomain) {
         self.petListViewModel.pets = pets
-        
         for animal in self.petListViewModel.pets.animals {
             for photo in animal.photos {
-                self.petListViewModel.urlImages.append(photo.mediumUrl)
-          }
+                showImageOfPet(photo: photo)
+            }
         }
         collectionView.reloadData()
     }
     
     func showError(_ message: String) {
-        self.petListViewModel.messageError = message
+        self.petListViewModel.errorMessage = message
         HUD.flash(.label(message), delay: 2.0)
     }
     
@@ -174,6 +171,16 @@ extension PetListView: PetListViewProtocol {
     
     func hideLoading() {
         HUD.hide()
+    }
+    
+    func showImageOfPet(photo: PhotoDomainModel) {
+        if(!photo.largeUrl.isEmpty) {
+            self.petListViewModel.urlImages.append(photo.largeUrl)
+        } else if (!photo.mediumUrl.isEmpty) {
+            self.petListViewModel.urlImages.append(photo.mediumUrl)
+        } else if (!photo.smallUrl.isEmpty) {
+            self.petListViewModel.urlImages.append(photo.smallUrl)
+        }
     }
     
 }
