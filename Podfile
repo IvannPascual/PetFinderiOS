@@ -17,6 +17,10 @@ target 'PetiOSShotl' do
   target 'PetiOSShotlTests' do
     inherit! :search_paths
     # Pods for testing
+ 	pod 'KIF', :configurations => ['Debug']
+    	pod 'Nimble'
+  pod 'PKHUD', '~> 5.0'
+
   end
 
   target 'PetiOSShotlUITests' do

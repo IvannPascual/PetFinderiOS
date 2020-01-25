@@ -12,7 +12,7 @@ import UIKit
 protocol PetListViewProtocol: class {
     var presenter: PetListPresenterProtocol? { get set }
     
-    func showPets(with pet: [PetModelResponse])
+    func showPets(with pet: PetModelDomain)
     func showOrganizations()
 
     func showError(_ message: String)
@@ -23,7 +23,8 @@ protocol PetListViewProtocol: class {
 
 // PRESENTER -> WIREFRAME
 protocol PetListWireFrameProtocol: class {
-    static func creatPetListModule() -> UIViewController
+    
+    func creatPetListModule() -> UIViewController
 }
 
 // VIEW -> PRESENTER
@@ -38,7 +39,7 @@ protocol PetListPresenterProtocol: class {
 
 // INTERACTOR -> PRESENTER
 protocol PetListInteractorOutputProtocol: class {
-    func didRetrievePets(_ pets: [PetModelResponse])
+    func didRetrievePets(_ pets: PetModelDomain)
     func didRetrieveOrganizations()
     func onErrorRetrievingPets(_ message: String)
     func onErrorRetrievingToken(_ message: String)
@@ -69,10 +70,10 @@ protocol PetListRemoteDataManagerInputProtocol: class {
 
 // REMOTEDATAMANAGER -> INTERACTOR
 protocol PetListRemoteDataManagerOutputProtocol: class {
-    func onPetsRetrieved(_ posts: [PetModelResponse])
+    func onPetsRetrieved(_ posts: PetModelDomain)
     func onErrorRetrievingPets(_ message: String)
     func onErrorToken(_ message: String)
-    func onSuccessOrganizations(_ organizations: Organizations)
+    func onSuccessOrganizations(_ organizations: OrganizationsDomainModel)
     func onErrorOrganizations(_ message: String)
 }
 

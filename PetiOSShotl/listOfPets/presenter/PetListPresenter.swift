@@ -28,7 +28,7 @@ class PetListPresenter: PetListPresenterProtocol {
 
 extension PetListPresenter: PetListInteractorOutputProtocol {
   
-    func didRetrievePets(_ pets: [PetModelResponse]) {
+    func didRetrievePets(_ pets: PetModelDomain) {
         view?.hideLoading()
         view?.showPets(with: pets)
     }

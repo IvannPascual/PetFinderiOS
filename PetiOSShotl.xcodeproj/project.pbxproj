@@ -35,6 +35,18 @@
 		2C505BC423D7662F00A4BCF6 /* ListOfPetsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */; };
 		2C505BC623D767EA00A4BCF6 /* PetListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */; };
 		2C505BC823D7700A00A4BCF6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C505BC723D7700A00A4BCF6 /* Token.swift */; };
+		2CE1BA9F23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */; };
+		2CE1BAA123DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA023DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift */; };
+		2CE1BAA323DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */; };
+		2CE1BAA623DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */; };
+		2CE1BAAA23DB9114003C480A /* PetModelDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAA923DB9114003C480A /* PetModelDomain.swift */; };
+		2CE1BAAC23DC2D8E003C480A /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */; };
+		2CE1BAAF23DC2EE1003C480A /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAAE23DC2EE1003C480A /* XCTestCase.swift */; };
+		2CE1BAB123DC2F22003C480A /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAB023DC2F22003C480A /* KIFTestActor.swift */; };
+		2CE1BAB523DC4C13003C480A /* OrganitzationsMapperDataToDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAB423DC4C13003C480A /* OrganitzationsMapperDataToDomain.swift */; };
+		2CE1BAB723DC52C7003C480A /* PetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BAB623DC52C7003C480A /* PetListViewModel.swift */; };
+		2CE1BABC23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BABB23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift */; };
+		2CE1BABE23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BABD23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift */; };
 		38548D1FFACAD0C56A6109ED /* Pods_PetiOSShotl_PetiOSShotlUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E315579F786C216DEEDEF3 /* Pods_PetiOSShotl_PetiOSShotlUITests.framework */; };
 		AD482EE402C4DD140577E9FC /* Pods_PetiOSShotlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15E1E6465AE37B0EA56FBE6 /* Pods_PetiOSShotlTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +102,18 @@
 		2C505BC323D7662F00A4BCF6 /* ListOfPetsWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfPetsWireframe.swift; sourceTree = "<group>"; };
 		2C505BC523D767EA00A4BCF6 /* PetListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListPresenter.swift; sourceTree = "<group>"; };
 		2C505BC723D7700A00A4BCF6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireframeWithEmptyRepositoryScenario.swift; sourceTree = "<group>"; };
+		2CE1BAA023DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePetDataSourceMockWithEmptyList.swift; sourceTree = "<group>"; };
+		2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRemoteDataSourceOutputMock.swift; sourceTree = "<group>"; };
+		2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfSongsMapperDataToDomain.swift; sourceTree = "<group>"; };
+		2CE1BAA923DB9114003C480A /* PetModelDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModelDomain.swift; sourceTree = "<group>"; };
+		2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
+		2CE1BAAE23DC2EE1003C480A /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		2CE1BAB023DC2F22003C480A /* KIFTestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
+		2CE1BAB423DC4C13003C480A /* OrganitzationsMapperDataToDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganitzationsMapperDataToDomain.swift; sourceTree = "<group>"; };
+		2CE1BAB623DC52C7003C480A /* PetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewModel.swift; sourceTree = "<group>"; };
+		2CE1BABB23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePetDataSourceMockWithServerError.swift; sourceTree = "<group>"; };
+		2CE1BABD23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotePetDataSourceWithFillListOfData.swift; sourceTree = "<group>"; };
 		4923B393AFFD2295C5A9E990 /* Pods-PetiOSShotlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetiOSShotlTests.debug.xcconfig"; path = "Target Support Files/Pods-PetiOSShotlTests/Pods-PetiOSShotlTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EBEB878FE4105610A96A69E /* Pods-PetiOSShotlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetiOSShotlTests.release.xcconfig"; path = "Target Support Files/Pods-PetiOSShotlTests/Pods-PetiOSShotlTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A35D0B6F089028B5CCB3964 /* Pods-PetiOSShotl-PetiOSShotlUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetiOSShotl-PetiOSShotlUITests.debug.xcconfig"; path = "Target Support Files/Pods-PetiOSShotl-PetiOSShotlUITests/Pods-PetiOSShotl-PetiOSShotlUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +166,7 @@
 		2C3F011923D853FA00BCB625 /* MapOfOrganizations */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAB323DC4BE5003C480A /* mapper */,
 				2C3F013E23D8FCA100BCB625 /* view */,
 				2C3F013123D8A9FD00BCB625 /* viewmodel */,
 			);
@@ -230,8 +255,13 @@
 		2C505B8A23D758E800A4BCF6 /* PetiOSShotlTests */ = {
 			isa = PBXGroup;
 			children = (
-				2C505B8B23D758E800A4BCF6 /* PetiOSShotlTests.swift */,
+				2CE1BABA23DC5789003C480A /* DataSourceMocks */,
+				2CE1BAAB23DC2D8E003C480A /* AcceptanceTestCase.swift */,
+				2CE1BAB223DC4293003C480A /* EndToEndTests */,
+				2CE1BAAD23DC2E82003C480A /* extensions */,
 				2C505B8D23D758E800A4BCF6 /* Info.plist */,
+				2CE1BA9E23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift */,
+				2CE1BAA223DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift */,
 			);
 			path = PetiOSShotlTests;
 			sourceTree = "<group>";
@@ -248,7 +278,10 @@
 		2C505BA623D75E1700A4BCF6 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAB623DC52C7003C480A /* PetListViewModel.swift */,
 				2C3F012923D87AFA00BCB625 /* MapOrganizationsDelegate.swift */,
+				2CE1BAB923DC52EE003C480A /* delegates */,
+				2CE1BAB823DC52E9003C480A /* viewmodel */,
 				2C505BA723D75E4800A4BCF6 /* PetListView.swift */,
 				2C505BA923D75E7100A4BCF6 /* PetCell.swift */,
 				2C505BBB23D7603000A4BCF6 /* PetHeader.swift */,
@@ -259,6 +292,8 @@
 		2C505BAB23D75E9F00A4BCF6 /* listOfPets */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BAA523DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift */,
+				2CE1BAA423DB908F003C480A /* mapper */,
 				2C3F013D23D8FC8800BCB625 /* datamanager */,
 				2C3F013C23D8FC7E00BCB625 /* presenter */,
 				2C3F013B23D8FC5B00BCB625 /* wireframe */,
@@ -282,9 +317,8 @@
 		2C505BB023D75EF500A4BCF6 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				2C505BB123D75EFE00A4BCF6 /* PetModel.swift */,
-				2C505BC723D7700A00A4BCF6 /* Token.swift */,
-				2C3F012B23D882E000BCB625 /* Organizations.swift */,
+				2CE1BAA823DB9100003C480A /* data */,
+				2CE1BAA723DB90F9003C480A /* domain */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -306,6 +340,80 @@
 				2C3F012D23D8977500BCB625 /* RemoteTokenProvider.swift */,
 			);
 			path = datasource;
+			sourceTree = "<group>";
+		};
+		2CE1BAA423DB908F003C480A /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		2CE1BAA723DB90F9003C480A /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1BAA923DB9114003C480A /* PetModelDomain.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		2CE1BAA823DB9100003C480A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2C3F012B23D882E000BCB625 /* Organizations.swift */,
+				2C505BC723D7700A00A4BCF6 /* Token.swift */,
+				2C505BB123D75EFE00A4BCF6 /* PetModel.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2CE1BAAD23DC2E82003C480A /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1BAAE23DC2EE1003C480A /* XCTestCase.swift */,
+				2CE1BAB023DC2F22003C480A /* KIFTestActor.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		2CE1BAB223DC4293003C480A /* EndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C505B8B23D758E800A4BCF6 /* PetiOSShotlTests.swift */,
+			);
+			path = EndToEndTests;
+			sourceTree = "<group>";
+		};
+		2CE1BAB323DC4BE5003C480A /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1BAB423DC4C13003C480A /* OrganitzationsMapperDataToDomain.swift */,
+			);
+			path = mapper;
+			sourceTree = "<group>";
+		};
+		2CE1BAB823DC52E9003C480A /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		2CE1BAB923DC52EE003C480A /* delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = delegates;
+			sourceTree = "<group>";
+		};
+		2CE1BABA23DC5789003C480A /* DataSourceMocks */ = {
+			isa = PBXGroup;
+			children = (
+				2CE1BAA023DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift */,
+				2CE1BABB23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift */,
+				2CE1BABD23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift */,
+			);
+			path = DataSourceMocks;
 			sourceTree = "<group>";
 		};
 		68B66746A16A0DA737272799 /* Pods */ = {
@@ -351,6 +459,7 @@
 				2C505B8323D758E800A4BCF6 /* Sources */,
 				2C505B8423D758E800A4BCF6 /* Frameworks */,
 				2C505B8523D758E800A4BCF6 /* Resources */,
+				005D8C0CA3B60AE07AF7BCFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -453,6 +562,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		005D8C0CA3B60AE07AF7BCFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetiOSShotlTests/Pods-PetiOSShotlTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetiOSShotlTests/Pods-PetiOSShotlTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetiOSShotlTests/Pods-PetiOSShotlTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1413B3132B1EA232582AA79F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3F012A23D87AFA00BCB625 /* MapOrganizationsDelegate.swift in Sources */,
+				2CE1BAA623DB90AA003C480A /* ListOfSongsMapperDataToDomain.swift in Sources */,
 				2C505BA823D75E4800A4BCF6 /* PetListView.swift in Sources */,
 				2C505BC823D7700A00A4BCF6 /* Token.swift in Sources */,
 				2C3F011823D84F1200BCB625 /* UserDataManager.swift in Sources */,
@@ -573,9 +700,12 @@
 				2C505BC623D767EA00A4BCF6 /* PetListPresenter.swift in Sources */,
 				2C505BBA23D75FD900A4BCF6 /* PetListRemoteDataManager.swift in Sources */,
 				2C3F013323D8AA0E00BCB625 /* OrganitzationsViewModel.swift in Sources */,
+				2CE1BAB723DC52C7003C480A /* PetListViewModel.swift in Sources */,
 				2C505BB223D75EFE00A4BCF6 /* PetModel.swift in Sources */,
+				2CE1BAB523DC4C13003C480A /* OrganitzationsMapperDataToDomain.swift in Sources */,
 				2C3F013A23D8D4D200BCB625 /* Credentials.swift in Sources */,
 				2C505B7523D758E500A4BCF6 /* AppDelegate.swift in Sources */,
+				2CE1BAAA23DB9114003C480A /* PetModelDomain.swift in Sources */,
 				2C505B7723D758E500A4BCF6 /* SceneDelegate.swift in Sources */,
 				2C505BBE23D7605400A4BCF6 /* Endpoints.swift in Sources */,
 				2C3F013023D897AB00BCB625 /* RemoteTokenDelegate.swift in Sources */,
@@ -589,7 +719,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE1BAB123DC2F22003C480A /* KIFTestActor.swift in Sources */,
+				2CE1BABE23DC6527003C480A /* RemotePetDataSourceWithFillListOfData.swift in Sources */,
+				2CE1BA9F23DB8E1D003C480A /* WireframeWithEmptyRepositoryScenario.swift in Sources */,
+				2CE1BAA323DB8E77003C480A /* PetRemoteDataSourceOutputMock.swift in Sources */,
+				2CE1BAAC23DC2D8E003C480A /* AcceptanceTestCase.swift in Sources */,
 				2C505B8C23D758E800A4BCF6 /* PetiOSShotlTests.swift in Sources */,
+				2CE1BAAF23DC2EE1003C480A /* XCTestCase.swift in Sources */,
+				2CE1BABC23DC5916003C480A /* RemotePetDataSourceMockWithServerError.swift in Sources */,
+				2CE1BAA123DB8E60003C480A /* RemotePetDataSourceMockWithEmptyList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

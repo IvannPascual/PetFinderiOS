@@ -42,7 +42,12 @@ class PetListRemoteDataManager:PetListRemoteDataManagerInputProtocol, RemoteToke
             , parameters: parameters, encoding: URLEncoding.default, headers: authHeader).responseObject { (response: DataResponse<PetModelResponse>) in
                 switch response.result {
                 case let .success(pets):
-                   self.remoteRequestHandler?.onPetsRetrieved([pets])
+                    let petsDomainModel = ListOfSongsMapperDataToDomain.mapPetDataModelToPetDomainModel(petModel: pets)
+                    if  petsDomainModel == nil {
+                        self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.DefaultError)
+                        return
+                    }
+                    self.remoteRequestHandler?.onPetsRetrieved(petsDomainModel!)
                 case let .failure(error):
                     #if DEBUG
                      self.remoteRequestHandler?.onErrorRetrievingPets(ErrorApiCalls.ErrorWhenCallEndpointPets)
@@ -66,8 +71,13 @@ class PetListRemoteDataManager:PetListRemoteDataManagerInputProtocol, RemoteToke
                 , parameters: parameters, encoding: URLEncoding.default, headers: authHeader).responseObject { (response: DataResponse<Organizations>) in
                     switch response.result {
                     case let .success(organizations):
-                        dump(organizations)
-                        self.remoteRequestHandler?.onSuccessOrganizations(organizations)
+                        let ortanitzationsDomainModel =  OrganitzationsMapperDataToDomain.mapOrganitzationsDataModelToDomainModel(organitzations: organizations)
+                        if (ortanitzationsDomainModel == nil) {
+                                self.remoteRequestHandler?.onErrorOrganizations(ErrorApiCalls.DefaultError)
+                                return
+                        }
+                        self.remoteRequestHandler?.onSuccessOrganizations(ortanitzationsDomainModel!)
+
                     case let .failure(error):
                            dump(error)
                            #if DEBUG

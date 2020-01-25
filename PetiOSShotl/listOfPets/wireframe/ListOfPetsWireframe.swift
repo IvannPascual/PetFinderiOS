@@ -9,27 +9,46 @@
 import Foundation
 import UIKit
 class ListOfPetsWireframe: PetListWireFrameProtocol {
-    static func creatPetListModule() -> UIViewController {
+    
+   
+    var petListView = PetListView(collectionViewLayout: UICollectionViewFlowLayout())
+    var presenter: PetListPresenterProtocol & PetListInteractorOutputProtocol
+    var interactor: PetListInteractorInputProtocol & PetListRemoteDataManagerOutputProtocol
+    var remoteDataManager: PetListRemoteDataManagerInputProtocol
+    var remoteTokenProvider: RemoteTokenProvider
+
+    init() {
+       presenter = PetListPresenter()
+       interactor = PetListInteractor()
+       remoteTokenProvider = RemoteTokenProvider()
+       remoteDataManager = PetListRemoteDataManager(remoteTokenProvider: remoteTokenProvider)
+    }
+    
+    
+    func creatPetListModule() -> UIViewController {
+        
+        
+        let wireFrame: PetListWireFrameProtocol = ListOfPetsWireframe()
         let layout = UICollectionViewFlowLayout()
-        let petListView = PetListView(collectionViewLayout: layout)
+        self.petListView = PetListView(collectionViewLayout: layout)
         
      
-        let presenter: PetListPresenterProtocol & PetListInteractorOutputProtocol = PetListPresenter()
-        let interactor: PetListInteractorInputProtocol & PetListRemoteDataManagerOutputProtocol = PetListInteractor()
-        let remoteTokenProvider: RemoteTokenProvider = RemoteTokenProvider()
-        let remoteDataManager: PetListRemoteDataManagerInputProtocol = PetListRemoteDataManager(remoteTokenProvider: remoteTokenProvider)
+        self.presenter = PetListPresenter()
+        self.interactor = PetListInteractor()
+        self.remoteTokenProvider = RemoteTokenProvider()
+        self.remoteDataManager = PetListRemoteDataManager(remoteTokenProvider: remoteTokenProvider)
 
-        let wireFrame: PetListWireFrameProtocol = ListOfPetsWireframe()
 
-        petListView.presenter = presenter
-        presenter.view = petListView
-        presenter.wireFrame = wireFrame
-        presenter.interactor = interactor
-        interactor.presenter = presenter
-        interactor.remoteDatamanager = remoteDataManager
-        remoteDataManager.remoteRequestHandler = interactor
+        self.petListView.presenter = presenter
+        self.presenter.view = self.petListView
+        self.presenter.wireFrame = wireFrame
+        self.presenter.interactor = self.interactor
+        self.interactor.presenter = self.presenter
+        self.interactor.remoteDatamanager = self.remoteDataManager
+        self.remoteDataManager.remoteRequestHandler = self.interactor
         
-        return petListView
+        return self.petListView
 
     }
+    
 }

@@ -24,11 +24,11 @@ class PetListInteractor: PetListInteractorInputProtocol {
 
 extension PetListInteractor: PetListRemoteDataManagerOutputProtocol {
     
-    func onPetsRetrieved(_ pets: [PetModelResponse]) {
+    func onPetsRetrieved(_ pets: PetModelDomain) {
          presenter?.didRetrievePets(pets)
     }
     
-    func onSuccessOrganizations(_ organizations: Organizations) {
+    func onSuccessOrganizations(_ organizations: OrganizationsDomainModel) {
         UserDataManager.shared.saveOrganitzationsViewModel(organizations)
         presenter?.didRetrieveOrganizations()
     }

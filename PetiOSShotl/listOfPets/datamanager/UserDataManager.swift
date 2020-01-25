@@ -11,7 +11,7 @@ class UserDataManager {
     
     static let shared = UserDataManager()
     var token = ""
-    var listOfOrganitzations = OrganizationsVM()
+    var listOfOrganitzations = OrganizationsDomainModel()
     
     private init() { }
     
@@ -20,29 +20,12 @@ class UserDataManager {
         
     }
     
-    func saveOrganitzationsViewModel(_ organitzations: Organizations) {
-        self.listOfOrganitzations = OrganizationsVM()
-        guard let organitzations = organitzations.organizations else {
-            return
-        }
-        for organitzation in organitzations{
-            let organitzationViewModel = OrganitzationViewModel()
-            let addresVM = AddressVM()
-            
-            organitzationViewModel.name = organitzation.name
-            organitzationViewModel.distance = organitzation.distance
-            
-            addresVM.address1 = organitzation.address?.address1 ?? ""
-            addresVM.address2 = organitzation.address?.address1 ?? ""
-            addresVM.city = organitzation.address?.city ?? ""
-            addresVM.postcode = organitzation.address?.postcode ?? ""
-
-            organitzationViewModel.address = addresVM
-            listOfOrganitzations.organitzations.append(organitzationViewModel)
-        }
+    func saveOrganitzationsViewModel(_ organitzations: OrganizationsDomainModel) {
+        self.listOfOrganitzations = OrganizationsDomainModel()
+        listOfOrganitzations = organitzations
     }
     
-    func retrieveOrgranitzations()-> OrganizationsVM {
+    func retrieveOrgranitzations()-> OrganizationsDomainModel {
         return self.listOfOrganitzations
     }
     

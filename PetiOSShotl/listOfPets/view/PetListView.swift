@@ -18,8 +18,7 @@ class PetListView: UICollectionViewController {
     
     
     var presenter: PetListPresenterProtocol?
-    var petList: [PetModelResponse] = []
-    var urlImages: [String] = [String]()
+    var petListViewModel = PetListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +53,14 @@ extension PetListView {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return urlImages.count
+        return petListViewModel.urlImages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PetCell
         print("Index path is \(indexPath.row)")
         
-        guard let url = URL(string: urlImages[indexPath.row]) else {
+        guard let url = URL(string: petListViewModel.urlImages[indexPath.row]) else {
             return cell
         }
         
@@ -153,26 +152,19 @@ extension PetListView: PetListViewProtocol {
         presentOrganizationsMapScreen()
     }
     
-    func showPets(with pets: [PetModelResponse]) {
-        petList = pets
-        for pet in petList {
-            guard let animals = pet.animals else {
-                return
-            }
-            for animal in animals {
-                guard let photos = animal.photos else {
-                    return
-                    
-                }
-                for photo in photos {
-                    urlImages.append(photo.mediumUrl)
-                }
-            }
+    func showPets(with pets: PetModelDomain) {
+        self.petListViewModel.pets = pets
+        
+        for animal in self.petListViewModel.pets.animals {
+            for photo in animal.photos {
+                self.petListViewModel.urlImages.append(photo.mediumUrl)
+          }
         }
         collectionView.reloadData()
     }
     
     func showError(_ message: String) {
+        self.petListViewModel.messageError = message
         HUD.flash(.label(message), delay: 2.0)
     }
     
