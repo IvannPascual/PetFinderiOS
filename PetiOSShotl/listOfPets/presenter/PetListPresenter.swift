@@ -10,7 +10,6 @@ import Foundation
 
 class PetListPresenter: PetListPresenterProtocol {
 
-    
     weak var view: PetListViewProtocol?
     var interactor: PetListInteractorInputProtocol?
     var wireFrame: PetListWireFrameProtocol?
@@ -28,7 +27,7 @@ class PetListPresenter: PetListPresenterProtocol {
 
 extension PetListPresenter: PetListInteractorOutputProtocol {
   
-    func didRetrievePets(_ pets: [PetModelResponse]) {
+    func didRetrievePets(_ pets: PetModelDomain) {
         view?.hideLoading()
         view?.showPets(with: pets)
     }

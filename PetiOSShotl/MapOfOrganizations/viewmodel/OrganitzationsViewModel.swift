@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OrganizationsVM {
+class OrganizationsDomainModel {
     var organitzations = [OrganitzationViewModel]()
 }
 

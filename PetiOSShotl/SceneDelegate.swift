@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let petListModule = ListOfPetsWireframe.creatPetListModule()
-        
+        let wireframe = ListOfPetsWireframe()
+        let petListModule = wireframe.creatPetListModule()
         let navigationController = UINavigationController(rootViewController: petListModule)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
