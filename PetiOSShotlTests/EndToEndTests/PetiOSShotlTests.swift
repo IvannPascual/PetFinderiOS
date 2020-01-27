@@ -22,23 +22,31 @@ class PetiOSShotlTests: AcceptanceTestCase {
         
     }
 
-    // test end to end scenario
     func testThatGivenAEmptyResponseCode200WithNoPetsTheListOfPetsInViewControllerIsEmpty() {
         let NoPetsRetrievedByTheServer = 0
+        //given a fake datasource with correct response 200 of the server
         let listOfPetsViewController = givenARealScenarioWithAFakeEmptyDataSourceOfPets()
-        tester().waitForAnimationsToFinish()
         
+        //when fetch pets is called
+        listOfPetsViewController.presenter?.retrieveOrganizations()
+        tester().waitForAnimationsToFinish()
+
+        // in the viewcontroller no appear error alert and the list of pets int the viewModel is empty
         assert(listOfPetsViewController.petListViewModel.pets.animals.count == NoPetsRetrievedByTheServer)
         assert(listOfPetsViewController.petListViewModel.errorMessage == " ")
 
         sleep(3)
     }
 
-    //test ent to end scenario
     func testThatGivenAEmptyResponseCode200WithNoOrganitzationsTheListOfOrganitzationsInDatamanagerIsEmpty() {
         let listOfPetsViewController = givenARealScenarioWithAFakeEmptyDataSourceOfPets()
-        tester().waitForAnimationsToFinish()
+        //given a fake datasource with correct response 200 of the server
         
+        //when fetch organitzations is called
+        listOfPetsViewController.presenter?.retrieveOrganizations()
+        tester().waitForAnimationsToFinish()
+
+        // in the viewcontroller no appear error alert and the list of organitzations in Datamanager Singleton is empty
         assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == 0)
         assert(listOfPetsViewController.petListViewModel.errorMessage == " ")
         
@@ -46,26 +54,39 @@ class PetiOSShotlTests: AcceptanceTestCase {
     }
     
     // test end to end scenario
-       func testThatGivenAError500ServerTheListOfPetsInViewControllerShowsMessageOfError() {
-           let NoPetsRetrievedByTheServer = 0
-           let listOfPetsViewController = givenARealScenarioWithAErrorServerResponseDataSource()
+    func testThatGivenAError500ServerTheListOfPetsInViewControllerShowsMessageOfError() {
+        let NoPetsRetrievedByTheServer = 0
         
-           tester().waitForAnimationsToFinish()
-           assert(listOfPetsViewController.petListViewModel.pets.animals.count == NoPetsRetrievedByTheServer)
-           assert(listOfPetsViewController.petListViewModel.errorMessage == RemotePetDataSourceMockWithServerError.errorServer500)
+        //given a fake datasource with correct response 500 of the server
+        let listOfPetsViewController = givenARealScenarioWithAErrorServerResponseDataSource()
+        
+        //when fetch pets is called
+        listOfPetsViewController.presenter?.retrievePets()
+        tester().waitForAnimationsToFinish()
+        
+        //in the viewcontroller appear an error alert and the list of pets in the viewModel is empty
+        assert(listOfPetsViewController.petListViewModel.pets.animals.count == NoPetsRetrievedByTheServer)
+        assert(listOfPetsViewController.petListViewModel.errorMessage == RemotePetDataSourceMockWithServerError.errorServer500)
          
-           sleep(3)
+        sleep(3)
+        
        }
     
     // test end to end scenario
     func testGivenACorrectReponse200OfGetPetsCallToTheServerWithOneElementInJson() {
         let onePetRecievedInServerCall = 1
+        let photoUrlJsonResponse = "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47168505/1/?bust=1579961545&width=100"
+        
+        //given a fake datasource with correct response 200 of the server and json with one pet in the response data
         let listOfPetsViewController = givenARealScenarioWithOneElementJsonInTheCallToTheServer()
-          
+        
+        //when fetch pets is called
+        listOfPetsViewController.presenter?.retrievePets()
         tester().waitForAnimationsToFinish()
         
+        //in the viewcontroller no appear an error alert and the list of pets in the viewModel has the item of the json
         assert(listOfPetsViewController.petListViewModel.pets.animals.count == onePetRecievedInServerCall)
-        assert(listOfPetsViewController.petListViewModel.errorMessage != RemotePetDataSourceMockWithServerError.errorServer500)
+        assert(listOfPetsViewController.petListViewModel.pets.animals.first?.photos.first?.smallUrl == photoUrlJsonResponse)
         assert(listOfPetsViewController.petListViewModel.errorMessage == " ")
         
         sleep(3)
@@ -76,11 +97,14 @@ class PetiOSShotlTests: AcceptanceTestCase {
         let nameOfOrganitzationThatServerResponse = "Catalana Occidente Sant Cugat"
         let adressOfOrganitzationThatServerResponse = "Av. Alcalde Barnils, 63, 08174 Sant Cugat del Vallès, Barcelona"
 
+        //given a fake datasource with correct response 200 of the server and json with one organitzation in the response data
         let listOfPetsViewController = givenARealScenarioWithOneElementJsonInTheCallToTheServer()
+        
+        // when retrieve organitzations is called
         listOfPetsViewController.presenter?.retrieveOrganizations()
         tester().waitForAnimationsToFinish()
 
-         
+         //in the viewcontroller no appear an error alert and the list of organitzations in the dataManager singleton appears the same data of the json
          assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == oneOrganitzationsIsReceivedByTheServer)
          assert(UserDataManager.shared.listOfOrganitzations.organitzations.first?.address.address1 == adressOfOrganitzationThatServerResponse)
          assert(UserDataManager.shared.listOfOrganitzations.organitzations.first?.name == nameOfOrganitzationThatServerResponse)
@@ -90,14 +114,18 @@ class PetiOSShotlTests: AcceptanceTestCase {
     }
     
     func testThatWhenAErrorServerReponse500OfGetOrganitzationsTheMapViewScreenIsNotOpened() {
-           let errorCallWithNoElements = 0
-           let listOfPetsViewController = givenARealScenarioWithAErrorServerResponseDataSource()
-           listOfPetsViewController.presenter?.retrieveOrganizations()
-           
-            tester().waitForAnimationsToFinish()
-         
-            assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == errorCallWithNoElements)
-            assert(listOfPetsViewController.petListViewModel.errorMessage == RemotePetDataSourceMockWithServerError.errorServer500)
+        let errorCallWithNoElements = 0
+        
+        //given a fake datasource with correct response 500 of the server
+        let listOfPetsViewController = givenARealScenarioWithAErrorServerResponseDataSource()
+        
+        // when retrieve organitzations is called
+        listOfPetsViewController.presenter?.retrieveOrganizations()
+        tester().waitForAnimationsToFinish()
+            
+        //in the viewcontroller  appear an error alert and the list of organitzations in the dataManager singleton not have data
+        assert(UserDataManager.shared.listOfOrganitzations.organitzations.count == errorCallWithNoElements)
+        assert(listOfPetsViewController.petListViewModel.errorMessage == RemotePetDataSourceMockWithServerError.errorServer500)
             
        }
     

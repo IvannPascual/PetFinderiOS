@@ -19,30 +19,22 @@ class EndPointTesting: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testThatEndPointFetchPetsIsCorrectlyGenerated() {
+    func testThatEndPointFetchPetsIsGeneratedCorrectly() {
         let expectedEndpointUrl = "https://api.petfinder.com/v2/animals"
         assert(expectedEndpointUrl == Endpoints.Pets.pets.url)
         
     }
     
-    func testThatEndPointFetchOrganitzationsIsCorrectlyGenerated() {
+    func testThatEndPointFetchOrganitzationsIsGeneratedCorrectly() {
         let expectedEndpointUrl = "https://api.petfinder.com/v2/organizations"
         assert(expectedEndpointUrl == Endpoints.Pets.organitzations.url)
         
     }
 
-    func testThatEndPointFetchTokenIsCorrectlyGenerated() {
+    func testThatEndPointFetchTokenIsGeneratedCorrectly() {
         let expectedEndpointUrl = "https://api.petfinder.com/v2/oauth2/token"
         assert(expectedEndpointUrl == Endpoints.Pets.token.url)
            
-    }
-    
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

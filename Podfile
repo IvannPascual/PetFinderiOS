@@ -19,8 +19,7 @@ target 'PetiOSShotl' do
     # Pods for testing
  	pod 'KIF', :configurations => ['Debug']
     	pod 'Nimble'
-  pod 'PKHUD', '~> 5.0'
-
+        pod 'PKHUD', '~> 5.0'
   end
 
   target 'PetiOSShotlUITests' do
